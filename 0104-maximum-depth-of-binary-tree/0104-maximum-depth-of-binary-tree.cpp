@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    int mx = 0;
+    
     int maxDepth(TreeNode* root) {
         if(root == NULL) return 0;
         int l = maxDepth(root->left);
