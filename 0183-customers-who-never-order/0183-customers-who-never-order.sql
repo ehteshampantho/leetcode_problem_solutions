@@ -1,7 +1,8 @@
 # Write your MySQL query statement below
 
-SELECT Cus.name AS Customers
-FROM CUSTOMERS AS Cus
-    LEFT JOIN Orders AS Ord
-    ON Cus.id = Ord.customerId
-WHERE Ord.id IS NULL;     
+  SELECT Customers.name AS Customers
+  FROM Customers
+    LEFT JOIN Orders
+    ON Customers.id = Orders.customerId
+  GROUP BY Customers.id
+  HAVING COUNT(Orders.id) = 0
